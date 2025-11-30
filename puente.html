@@ -3,42 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Misión: Puy du Fou - Sábado 6 de Diciembre</title>
+    <title>Misión: Puy du Fou - Navidad 2025</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&family=Cinzel:wght@700&display=swap" rel="stylesheet">
     <!-- Marked.js for Markdown parsing -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
     <style>
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #F0F3F4; /* Light Gray/Blue background */
-            color: #2C3E50; /* Dark Slate Blue text */
+            background-color: #Fdfbf7; /* Warm parchment background for Christmas */
+            color: #2C3E50;
         }
         
-        /* Custom Palette - "Royal & Vibrant" */
-        .text-primary { color: #2980B9; } /* Blue */
-        .bg-primary { background-color: #2980B9; }
-        .text-secondary { color: #E67E22; } /* Orange */
-        .bg-secondary { background-color: #E67E22; }
-        .text-accent { color: #C0392B; } /* Red */
-        .bg-accent { background-color: #C0392B; }
-        .text-success { color: #27AE60; } /* Green */
-        .bg-success { background-color: #27AE60; }
+        h1, h2, h3, h4 {
+            font-family: 'Cinzel', serif; /* Medieval/Christmas font */
+        }
 
+        /* Christmas Palette */
+        .text-primary { color: #165B33; } /* Christmas Green */
+        .bg-primary { background-color: #165B33; }
+        .text-secondary { color: #BB2528; } /* Christmas Red */
+        .bg-secondary { background-color: #BB2528; }
+        .text-accent { color: #D4AF37; } /* Gold */
+        .bg-accent { background-color: #D4AF37; }
+        .text-snow { color: #1B4F72; } /* Winter Blue */
+        
         /* Header Background with AI Image */
         .header-bg {
-            background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('cabecera.png');
+            background-image: linear-gradient(rgba(22, 91, 51, 0.7), rgba(187, 37, 40, 0.6)), url('cabecera.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
         }
 
-        /* Chart Container Styling - MANDATORY */
+        /* Chart Container Styling */
         .chart-container {
             position: relative;
             width: 100%;
@@ -61,7 +64,7 @@
             transform: translateX(-50%);
             width: 4px;
             height: 100%;
-            background-color: #BDC3C7;
+            background-color: #D4AF37; /* Gold Line */
             z-index: 0;
         }
         .timeline-item {
@@ -71,7 +74,8 @@
 
         /* AI Oracle Styling */
         .oracle-box {
-            background: linear-gradient(135deg, #2980B9 0%, #6DD5FA 100%);
+            background: linear-gradient(135deg, #165B33 0%, #0F3B21 100%);
+            border: 2px solid #D4AF37;
         }
         .chat-bubble {
             position: relative;
@@ -81,20 +85,9 @@
             margin-bottom: 1rem;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-        .chat-bubble::after {
-            content: '';
-            position: absolute;
-            left: 20px;
-            bottom: -10px;
-            border-width: 10px 10px 0;
-            border-style: solid;
-            border-color: white transparent;
-            display: block;
-            width: 0;
-        }
         .loader {
             border: 4px solid #f3f3f3;
-            border-top: 4px solid #E67E22;
+            border-top: 4px solid #BB2528;
             border-radius: 50%;
             width: 30px;
             height: 30px;
@@ -109,15 +102,15 @@
 </head>
 <body class="pb-12">
 
-    <!-- Header Section with AI Image -->
-    <header class="header-bg text-white py-20 px-4 shadow-lg mb-8 transition-all duration-500 hover:shadow-2xl">
+    <!-- Header Section -->
+    <header class="header-bg text-white py-20 px-4 shadow-lg mb-8 transition-all duration-500 hover:shadow-2xl border-b-8 border-accent">
         <div class="max-w-5xl mx-auto text-center">
-            <h1 class="text-4xl md:text-7xl font-black mb-4 uppercase tracking-wider drop-shadow-lg">Misión: Puy du Fou</h1>
-            <p class="text-xl md:text-3xl font-light drop-shadow-md">Estrategia Operativa para el Sábado 6 de Diciembre, 2025</p>
+            <h1 class="text-4xl md:text-7xl font-black mb-4 uppercase tracking-wider drop-shadow-lg text-accent">Navidad en Puy du Fou</h1>
+            <p class="text-xl md:text-3xl font-light drop-shadow-md text-white">Estrategia Táctica: Sábado 6 de Diciembre</p>
             <div class="mt-8 flex justify-center gap-4 flex-wrap">
-                <span class="bg-white/90 text-primary px-6 py-2 rounded-full font-bold shadow-md backdrop-blur-sm">📍 Toledo, ES</span>
+                <span class="bg-white/90 text-primary px-6 py-2 rounded-full font-bold shadow-md backdrop-blur-sm">🎄 Edición Especial</span>
                 <span class="bg-secondary/90 text-white px-6 py-2 rounded-full font-bold shadow-md backdrop-blur-sm">📅 06/12/2025</span>
-                <span class="bg-accent/90 text-white px-6 py-2 rounded-full font-bold shadow-md backdrop-blur-sm">🌧️ Alerta Lluvia</span>
+                <span class="bg-accent/90 text-white px-6 py-2 rounded-full font-bold shadow-md backdrop-blur-sm">⏰ Apertura 11:30h</span>
             </div>
         </div>
     </header>
@@ -125,14 +118,17 @@
     <main class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
 
         <!-- Section 1: Introduction -->
-        <div class="col-span-1 md:col-span-2 bg-white rounded-lg shadow-md p-8">
-            <h2 class="text-3xl font-bold text-primary mb-4 border-b-2 border-secondary pb-2">Informe de Situación</h2>
+        <div class="col-span-1 md:col-span-2 bg-white rounded-lg shadow-md p-8 border-t-4 border-secondary">
+            <h2 class="text-3xl font-bold text-secondary mb-4 border-b-2 border-accent pb-2">Informe de Navidad</h2>
             <p class="text-lg text-gray-700 leading-relaxed">
-                Agentes viajeros, su misión para el <strong>Puente de la Inmaculada</strong> es clara: conquistar Puy du Fou en un solo día. 
-                Nos enfrentamos a un sábado de máxima afluencia y meteorología inestable. 
-                Esta hoja de ruta visualiza los datos críticos de supervivencia: desde la probabilidad de lluvia hasta la cronología exacta para evitar las colas.
+                Agentes, el parque se transforma en Navidad. Los horarios cambian y algunos espectáculos se sustituyen por eventos especiales.
                 <br><br>
-                <strong>Objetivo Principal:</strong> Completar **todos los grandes espectáculos** (5 en total) antes del cierre a las 19:00h, minimizando la exposición a la lluvia y maximizando el tiempo en interiores.
+                <strong>⚠️ Cambios Críticos:</strong>
+                <ul class="list-disc list-inside mt-2 ml-4">
+                    <li><strong>Horario:</strong> Apertura tardía a las <strong>11:30h</strong> (no madruguéis innecesariamente).</li>
+                    <li><strong>Cancelados:</strong> <em>Cetrería de Reyes</em> (aves) y <em>El Sueño de Toledo</em> no se realizan en invierno.</li>
+                    <li><strong>Novedades:</strong> Prioridad al show navideño <em>"Sueños de un Ángel Pícaro"</em> y al <em>Gran Belén Viviente</em>.</li>
+                </ul>
             </p>
         </div>
 
@@ -140,250 +136,172 @@
         <div class="col-span-1 md:col-span-2 oracle-box rounded-lg shadow-xl p-8 text-white">
             <div class="flex flex-col md:flex-row items-start gap-6">
                 <div class="flex-1">
-                    <h2 class="text-3xl font-bold mb-2">✨ El Oráculo del Viajero</h2>
-                    <p class="mb-4 text-blue-100">
-                        ¿Tienes dudas sobre el plan? Nuestra IA experta en Puy du Fou tiene acceso a los datos meteorológicos y al mapa del parque. Pregúntale lo que quieras.
+                    <h2 class="text-3xl font-bold mb-2 text-accent">✨ El Oráculo Navideño</h2>
+                    <p class="mb-4 text-green-100">
+                        Pregúntame sobre los especiales de Navidad, dónde encontrar chocolate caliente o el horario del Belén.
                     </p>
                     
-                    <!-- Predefined Prompt Buttons -->
                     <div class="flex flex-wrap gap-2 mb-4">
-                        <button onclick="askOracle('¿Qué ropa exacta me recomiendas para la lluvia y el frío de hoy?')" class="bg-white text-primary px-4 py-2 rounded-full font-bold text-sm hover:bg-gray-100 transition shadow-sm">
-                            ✨ ¿Qué me pongo?
+                        <button onclick="askOracle('¿Qué tiene de especial la Navidad en el parque?')" class="bg-white text-primary px-4 py-2 rounded-full font-bold text-sm hover:bg-gray-100 transition shadow-sm">
+                            🎄 Especiales Navidad
                         </button>
-                        <button onclick="askOracle('Tengo niños pequeños, ¿qué espectáculos priorizo si se cansan?')" class="bg-white text-primary px-4 py-2 rounded-full font-bold text-sm hover:bg-gray-100 transition shadow-sm">
-                            ✨ Plan con niños
-                        </button>
-                        <button onclick="askOracle('¿Dónde puedo comer caliente y rápido?')" class="bg-white text-primary px-4 py-2 rounded-full font-bold text-sm hover:bg-gray-100 transition shadow-sm">
-                            ✨ Comida caliente
+                        <button onclick="askOracle('¿Hace mucho frío en los teatros interiores?')" class="bg-white text-primary px-4 py-2 rounded-full font-bold text-sm hover:bg-gray-100 transition shadow-sm">
+                            ❄️ Frío en Teatros
                         </button>
                     </div>
 
-                    <!-- Input Area -->
                     <div class="relative">
-                        <input type="text" id="oracleInput" placeholder="Escribe tu pregunta aquí..." class="w-full p-4 pr-12 rounded-lg text-gray-800 shadow-inner focus:outline-none focus:ring-4 focus:ring-secondary">
-                        <button onclick="askOracle()" class="absolute right-2 top-2 bg-secondary text-white p-2 rounded-lg hover:bg-orange-600 transition">
-                            ➤
-                        </button>
+                        <input type="text" id="oracleInput" placeholder="Escribe tu pregunta aquí..." class="w-full p-4 pr-12 rounded-lg text-gray-800 shadow-inner focus:outline-none focus:ring-4 focus:ring-accent">
+                        <button onclick="askOracle()" class="absolute right-2 top-2 bg-accent text-white p-2 rounded-lg hover:bg-yellow-600 transition">➤</button>
                     </div>
                 </div>
 
-                <!-- Response Area -->
                 <div class="flex-1 w-full md:w-auto">
-                    <div id="oracleResponse" class="chat-bubble text-gray-800 min-h-[150px] hidden">
-                        <!-- Content will be injected here -->
-                    </div>
+                    <div id="oracleResponse" class="chat-bubble text-gray-800 min-h-[150px] hidden"></div>
                     <div id="oracleLoading" class="hidden text-center py-8">
                         <div class="loader"></div>
-                        <p class="mt-2 text-blue-100 font-bold">Consultando los pergaminos...</p>
+                        <p class="mt-2 text-green-100 font-bold">Consultando a los Reyes Magos...</p>
                     </div>
-                    <!-- Intro Bubble -->
                     <div id="oracleIntro" class="chat-bubble text-gray-800">
-                        <p class="font-bold text-primary">👋 ¡Saludos, viajero!</p>
-                        <p class="text-sm mt-1">Soy el guardián digital. Conozco el clima (15°C máx, lluvia) y los horarios. Pregúntame cómo sobrevivir a tu visita.</p>
+                        <p class="font-bold text-primary">👑 ¡Felices Fiestas!</p>
+                        <p class="text-sm mt-1">Soy tu guía de Navidad. Recuerda: Abrimos a las 11:30h. ¡No llegues a las 9!</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Section 2: Weather Intelligence -->
-        <div class="col-span-1 bg-white rounded-lg shadow-md p-6 border-l-8 border-accent">
-            <h3 class="text-2xl font-bold text-gray-800 mb-4">⛈️ Inteligencia Meteorológica</h3>
-            <p class="text-gray-600 mb-6">
-                El tiempo será el factor crítico. Se esperan temperaturas frescas y una probabilidad significativa de lluvia ligera acompañada de viento. 
-                El siguiente gráfico muestra el rango térmico y el riesgo de precipitación.
-            </p>
-            
-            <div class="chart-container">
+        <!-- Section 2: Weather & Gear (Condensed) -->
+        <div class="col-span-1 bg-white rounded-lg shadow-md p-6 border-l-8 border-snow">
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">⛈️ Clima de Diciembre</h3>
+            <div class="chart-container h-64">
                 <canvas id="weatherChart"></canvas>
             </div>
-            
-            <div class="mt-4 text-center">
-                <p class="text-sm font-bold text-accent">¡Sensación térmica reducida por viento!</p>
-            </div>
+            <p class="text-sm text-center mt-2 text-gray-500">Máx 15°C / Mín 9°C - Lluvia probable.</p>
         </div>
 
-        <!-- Section 3: Risk Analysis (Rain Probability) -->
-        <div class="col-span-1 bg-white rounded-lg shadow-md p-6 border-l-8 border-primary">
-            <h3 class="text-2xl font-bold text-gray-800 mb-4">☔ Probabilidad de Lluvia</h3>
-            <p class="text-gray-600 mb-6">
-                No dejéis nada al azar. Con un riesgo del 30%, el poncho es obligatorio. 
-                Este gráfico desglosa la probabilidad de encontrarnos agua durante la operación.
-            </p>
-
-            <div class="chart-container">
-                <canvas id="rainChart"></canvas>
-            </div>
-        </div>
-
-        <!-- Section 4: Gear Loadout (HTML/CSS Visualization) -->
-        <div class="col-span-1 md:col-span-2 bg-white rounded-lg shadow-md p-8">
-            <h3 class="text-2xl font-bold text-gray-800 mb-6 border-b border-gray-200 pb-2">🎒 Equipamiento Táctico (Checklist)</h3>
-            <p class="text-gray-600 mb-6">
-                Para garantizar el éxito de la misión bajo condiciones de lluvia y caminata intensiva, cada miembro del equipo debe portar los siguientes ítems.
-            </p>
-            
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <!-- Item 1 -->
-                <div class="bg-blue-50 p-4 rounded-xl text-center hover:shadow-lg transition-shadow border-2 border-primary">
-                    <div class="text-4xl mb-2">🧥</div>
-                    <h4 class="font-bold text-primary">Poncho/Chubasquero</h4>
-                    <p class="text-xs text-gray-500 mt-1">OBLIGATORIO. Mejor que paraguas.</p>
+        <div class="col-span-1 bg-white rounded-lg shadow-md p-6 border-l-8 border-secondary">
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">🎒 Kit de Supervivencia</h3>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="bg-red-50 p-3 rounded text-center border border-secondary">
+                    <span class="text-2xl">🧥</span><br><strong>Abrigo + Capas</strong>
                 </div>
-                <!-- Item 2 -->
-                <div class="bg-orange-50 p-4 rounded-xl text-center hover:shadow-lg transition-shadow border-2 border-secondary">
-                    <div class="text-4xl mb-2">🧅</div>
-                    <h4 class="font-bold text-secondary">Sistema de Capas</h4>
-                    <p class="text-xs text-gray-500 mt-1">Térmica + Jersey + Abrigo.</p>
+                <div class="bg-blue-50 p-3 rounded text-center border border-snow">
+                    <span class="text-2xl">☔</span><br><strong>Poncho Lluvia</strong>
                 </div>
-                <!-- Item 3 -->
-                <div class="bg-gray-50 p-4 rounded-xl text-center hover:shadow-lg transition-shadow border-2 border-gray-400">
-                    <div class="text-4xl mb-2">🥾</div>
-                    <h4 class="font-bold text-gray-700">Calzado Water-Resist</h4>
-                    <p class="text-xs text-gray-500 mt-1">Caminos de tierra = Barro.</p>
+                <div class="bg-yellow-50 p-3 rounded text-center border border-accent">
+                    <span class="text-2xl">🧤</span><br><strong>Guantes/Gorro</strong>
                 </div>
-                <!-- Item 4 -->
-                <div class="bg-red-50 p-4 rounded-xl text-center hover:shadow-lg transition-shadow border-2 border-accent">
-                    <div class="text-4xl mb-2">🎒</div>
-                    <h4 class="font-bold text-accent">Mochila Impermeable</h4>
-                    <p class="text-xs text-gray-500 mt-1">Protege ropa seca y móviles.</p>
+                <div class="bg-green-50 p-3 rounded text-center border border-primary">
+                    <span class="text-2xl">🍫</span><br><strong>Snacks</strong>
                 </div>
             </div>
         </div>
 
-        <!-- Section 5: Tactical Timeline (UPDATED) -->
-        <div class="col-span-1 md:col-span-2 lg:col-span-1 bg-white rounded-lg shadow-md p-6">
-            <h3 class="text-2xl font-bold text-gray-800 mb-6">⏱️ Cronograma de Operaciones (Completo)</h3>
-            <p class="text-gray-600 mb-6">
-                ¡Misión completa! Este flujo horario está diseñado para ver los **5 grandes espectáculos** y aprovechar las experiencias de los pueblos. ¡Máxima puntualidad requerida!
+        <!-- Section 3: Christmas Timeline (UPDATED 11:30 START) -->
+        <div class="col-span-1 md:col-span-2 bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-2xl font-bold text-secondary mb-6 text-center">⏱️ Cronograma Navideño (11:30h - 19:00h)</h3>
+            <p class="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
+                Estrategia ajustada al horario de invierno. Objetivo: Ver los 4 grandes teatros + los especiales de Navidad.
             </p>
 
-            <div class="relative py-4">
-                <!-- Vertical Line -->
+            <div class="relative py-4 max-w-3xl mx-auto">
                 <div class="timeline-line"></div>
 
-                <!-- Event 1 (Logística) -->
+                <!-- 11:30 Opening -->
                 <div class="timeline-item flex items-center mb-8">
-                    <div class="w-20 text-right font-bold text-primary mr-4">09:00</div>
+                    <div class="w-24 text-right font-bold text-primary mr-4">11:30</div>
                     <div class="w-4 h-4 bg-primary rounded-full border-4 border-white shadow"></div>
-                    <div class="flex-1 ml-4 bg-blue-50 p-3 rounded-lg shadow-sm border-l-4 border-primary">
-                        <h4 class="font-bold">Llegada y Posicionamiento</h4>
-                        <p class="text-sm">Parqueo y fila en tornos. El tiempo es oro.</p>
+                    <div class="flex-1 ml-4 bg-green-50 p-4 rounded-lg shadow-sm border-l-4 border-primary">
+                        <h4 class="font-bold">Apertura de Puertas</h4>
+                        <p class="text-sm">Entrada tranquila. Decoración navideña y villancicos.</p>
                     </div>
                 </div>
 
-                <!-- Event 2 (Logística) -->
+                <!-- 12:15 Show 1 -->
                 <div class="timeline-item flex items-center mb-8">
-                    <div class="w-20 text-right font-bold text-secondary mr-4">09:30</div>
+                    <div class="w-24 text-right font-bold text-secondary mr-4">12:15</div>
                     <div class="w-4 h-4 bg-secondary rounded-full border-4 border-white shadow"></div>
-                    <div class="flex-1 ml-4 bg-orange-50 p-3 rounded-lg shadow-sm border-l-4 border-secondary">
-                        <h4 class="font-bold">Acceso al Parque</h4>
-                        <p class="text-sm">Entrada y marcha rápida hacia la zona baja (Villas de Antaño).</p>
-                    </div>
-                </div>
-                
-                <!-- Event 3 (Show 1 - Interior) -->
-                <div class="timeline-item flex items-center mb-8">
-                    <div class="w-20 text-right font-bold text-accent mr-4">10:00</div>
-                    <div class="w-4 h-4 bg-accent rounded-full border-4 border-white shadow"></div>
-                    <div class="flex-1 ml-4 bg-red-50 p-3 rounded-lg shadow-sm border-l-4 border-accent">
-                        <h4 class="font-bold text-accent">🔥 El Último Cantar (Indoor)</h4>
-                        <p class="text-sm">Primer golpe en un espectáculo a cubierto.</p>
+                    <div class="flex-1 ml-4 bg-red-50 p-4 rounded-lg shadow-sm border-l-4 border-secondary">
+                        <h4 class="font-bold text-secondary">🔥 El Último Cantar</h4>
+                        <p class="text-sm">Empezamos fuerte y a cubierto (Indoor).</p>
                     </div>
                 </div>
 
-                <!-- Event 4 (Pueblo/Experiencia Menor) -->
+                <!-- 13:30 Show 2 -->
                 <div class="timeline-item flex items-center mb-8">
-                    <div class="w-20 text-right font-bold text-success mr-4">11:15</div>
-                    <div class="w-4 h-4 bg-success rounded-full border-4 border-white shadow"></div>
-                    <div class="flex-1 ml-4 bg-green-50 p-3 rounded-lg shadow-sm border-l-4 border-success">
-                        <h4 class="font-bold text-success">Exploración de Villas</h4>
-                        <p class="text-sm">Visita al Askar Andalusí o La Venta de Isidro.</p>
-                    </div>
-                </div>
-
-                <!-- Event 5 (Show 2 - Interior) -->
-                <div class="timeline-item flex items-center mb-8">
-                    <div class="w-20 text-right font-bold text-accent mr-4">12:00</div>
-                    <div class="w-4 h-4 bg-accent rounded-full border-4 border-white shadow"></div>
-                    <div class="flex-1 ml-4 bg-red-50 p-3 rounded-lg shadow-sm border-l-4 border-accent">
-                        <h4 class="font-bold text-accent">🗡️ A Pluma y Espada (Indoor)</h4>
-                        <p class="text-sm">Estrategia de mañana cubierta (2/5).</p>
-                    </div>
-                </div>
-
-                <!-- Event 6 (Comida Estratégica) -->
-                <div class="timeline-item flex items-center mb-8">
-                    <div class="w-20 text-right font-bold text-secondary mr-4">13:30</div>
+                    <div class="w-24 text-right font-bold text-secondary mr-4">13:30</div>
                     <div class="w-4 h-4 bg-secondary rounded-full border-4 border-white shadow"></div>
-                    <div class="flex-1 ml-4 bg-orange-50 p-3 rounded-lg shadow-sm border-l-4 border-secondary">
-                        <h4 class="font-bold text-secondary">Avituallamiento (Early Lunch)</h4>
-                        <p class="text-sm">Comida temprana para evitar colas críticas de las 14:30.</p>
+                    <div class="flex-1 ml-4 bg-red-50 p-4 rounded-lg shadow-sm border-l-4 border-secondary">
+                        <h4 class="font-bold text-secondary">🗡️ A Pluma y Espada</h4>
+                        <p class="text-sm">Gran teatro clásico (Indoor).</p>
                     </div>
                 </div>
 
-                <!-- Event 7 (Show 3 - Interior) -->
+                <!-- 14:30 Lunch -->
                 <div class="timeline-item flex items-center mb-8">
-                    <div class="w-20 text-right font-bold text-accent mr-4">14:30</div>
+                    <div class="w-24 text-right font-bold text-accent mr-4">14:30</div>
                     <div class="w-4 h-4 bg-accent rounded-full border-4 border-white shadow"></div>
-                    <div class="flex-1 ml-4 bg-red-50 p-3 rounded-lg shadow-sm border-l-4 border-accent">
-                        <h4 class="font-bold text-accent">🌊 Allende la Mar Océana (Indoor)</h4>
-                        <p class="text-sm">Tercer gran espectáculo bajo techo.</p>
-                    </div>
-                </div>
-                
-                <!-- Event 8 (Show 4 - Exterior, el más crítico) -->
-                <div class="timeline-item flex items-center mb-8">
-                    <div class="w-20 text-right font-bold text-accent mr-4">16:00</div>
-                    <div class="w-4 h-4 bg-accent rounded-full border-4 border-white shadow"></div>
-                    <div class="flex-1 ml-4 bg-red-50 p-3 rounded-lg shadow-sm border-l-4 border-accent">
-                        <h4 class="font-bold text-accent">🦅 Cetrería de Reyes (Outdoor)</h4>
-                        <p class="text-sm">El único show grande al aire libre. Usar el chubasquero.</p>
+                    <div class="flex-1 ml-4 bg-yellow-50 p-4 rounded-lg shadow-sm border-l-4 border-accent">
+                        <h4 class="font-bold text-accent">🥘 Comida en "El Arrabal"</h4>
+                        <p class="text-sm">Parada técnica. Probablemente migas o guiso caliente.</p>
                     </div>
                 </div>
 
-                <!-- Event 9 (Show 5 - Interior) -->
+                <!-- 15:45 Christmas Special -->
                 <div class="timeline-item flex items-center mb-8">
-                    <div class="w-20 text-right font-bold text-accent mr-4">17:30</div>
-                    <div class="w-4 h-4 bg-accent rounded-full border-4 border-white shadow"></div>
-                    <div class="flex-1 ml-4 bg-red-50 p-3 rounded-lg shadow-sm border-l-4 border-accent">
-                        <h4 class="font-bold text-accent">🐴 Sorbaces (Indoor)</h4>
-                        <p class="text-sm">El último espectáculo principal (5/5) antes del cierre.</p>
+                    <div class="w-24 text-right font-bold text-primary mr-4">15:45</div>
+                    <div class="w-4 h-4 bg-primary rounded-full border-4 border-white shadow"></div>
+                    <div class="flex-1 ml-4 bg-green-100 p-4 rounded-lg shadow-sm border-l-4 border-primary ring-2 ring-accent">
+                        <h4 class="font-bold text-primary">👼 Sueños de un Ángel Pícaro</h4>
+                        <p class="text-sm"><strong>¡Exclusivo Navidad!</strong> El show especial de temporada.</p>
                     </div>
                 </div>
 
-                <!-- Event 10 (Logística) -->
+                <!-- 16:45 Show 3 -->
+                <div class="timeline-item flex items-center mb-8">
+                    <div class="w-24 text-right font-bold text-secondary mr-4">16:45</div>
+                    <div class="w-4 h-4 bg-secondary rounded-full border-4 border-white shadow"></div>
+                    <div class="flex-1 ml-4 bg-red-50 p-4 rounded-lg shadow-sm border-l-4 border-secondary">
+                        <h4 class="font-bold text-secondary">🌊 Allende la Mar Océana</h4>
+                        <p class="text-sm">Paseo inmersivo en el barco de Colón (Indoor).</p>
+                    </div>
+                </div>
+
+                <!-- 17:45 Show 4 -->
+                <div class="timeline-item flex items-center mb-8">
+                    <div class="w-24 text-right font-bold text-secondary mr-4">17:45</div>
+                    <div class="w-4 h-4 bg-secondary rounded-full border-4 border-white shadow"></div>
+                    <div class="flex-1 ml-4 bg-red-50 p-4 rounded-lg shadow-sm border-l-4 border-secondary">
+                        <h4 class="font-bold text-secondary">🐴 El Misterio de Sorbaces</h4>
+                        <p class="text-sm">Último gran espectáculo del día.</p>
+                    </div>
+                </div>
+
+                <!-- 18:30 Walkthrough -->
+                <div class="timeline-item flex items-center mb-8">
+                    <div class="w-24 text-right font-bold text-primary mr-4">18:30</div>
+                    <div class="w-4 h-4 bg-primary rounded-full border-4 border-white shadow"></div>
+                    <div class="flex-1 ml-4 bg-green-100 p-4 rounded-lg shadow-sm border-l-4 border-primary">
+                        <h4 class="font-bold text-primary">🐑 El Gran Belén Viviente</h4>
+                        <p class="text-sm">Recorrido a pie. Imprescindible antes de irse.</p>
+                    </div>
+                </div>
+
+                <!-- 19:00 Exit -->
                 <div class="timeline-item flex items-center">
-                    <div class="w-20 text-right font-bold text-primary mr-4">19:00</div>
-                    <div class="w-4 h-4 bg-primary rounded-full border-4 border-white shadow"></div>
-                    <div class="flex-1 ml-4 bg-blue-50 p-3 rounded-lg shadow-sm border-l-4 border-primary">
-                        <h4 class="font-bold">Retirada Táctica</h4>
-                        <p class="text-sm">Salida planificada antes del colapso de la noche.</p>
+                    <div class="w-24 text-right font-bold text-gray-500 mr-4">19:00</div>
+                    <div class="w-4 h-4 bg-gray-500 rounded-full border-4 border-white shadow"></div>
+                    <div class="flex-1 ml-4 bg-gray-100 p-4 rounded-lg shadow-sm border-l-4 border-gray-500">
+                        <h4 class="font-bold">Retirada</h4>
+                        <p class="text-sm">Salida antes del cierre (y antes de la Cabalgata de Reyes a las 20:30h).</p>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <!-- Section 6: Show Strategy (Pie Chart) -->
-        <div class="col-span-1 md:col-span-2 lg:col-span-1 bg-white rounded-lg shadow-md p-6">
-            <h3 class="text-2xl font-bold text-gray-800 mb-4">🛡️ Análisis de Cobertura</h3>
-            <p class="text-gray-600 mb-6">
-                Dado el riesgo de lluvia, es vital conocer qué porcentaje del plan está a cubierto.
-                La mayoría de los "Grandes" son Indoor, lo que juega a nuestro favor.
-                <strong>Cetrería de Reyes</strong> es el único punto crítico al aire libre.
-            </p>
-
-            <div class="chart-container">
-                <canvas id="showsChart"></canvas>
-            </div>
-            <ul class="mt-6 space-y-2 text-sm text-gray-600">
-                <li class="flex items-center"><span class="w-3 h-3 bg-primary rounded-full mr-2"></span> <strong>Indoor:</strong> A Pluma y Espada, El Último Cantar, Allende la Mar, Sorbaces.</li>
-                <li class="flex items-center"><span class="w-3 h-3 bg-secondary rounded-full mr-2"></span> <strong>Outdoor:</strong> Cetrería de Reyes (¡Priorizar si sale el sol!).</li>
-            </ul>
         </div>
 
         <!-- Footer -->
         <div class="col-span-1 md:col-span-2 text-center py-8 text-gray-500 text-sm">
-            <p>Generado para la Misión Puy du Fou 2025. Datos basados en previsión meteorológica del 06/12/2025.</p>
+            <p>Generado para la Misión Puy du Fou - Especial Navidad 2025.</p>
         </div>
 
     </main>
@@ -392,7 +310,7 @@
         // --- GEMINI API INTEGRATION ---
         
         async function askOracle(presetQuestion = null) {
-            const apiKey = "AIzaSyAP3kCHvkkVUFTcbMfY9Xrn4t0DGFya_r0"; // Runtime Environment Key
+            const apiKey = ""; // Runtime Environment Key
             const inputField = document.getElementById('oracleInput');
             const introDiv = document.getElementById('oracleIntro');
             const responseDiv = document.getElementById('oracleResponse');
@@ -408,29 +326,27 @@
             loadingDiv.classList.remove('hidden');
             if (presetQuestion) inputField.value = presetQuestion;
 
-            // Context Prompt
+            // Context Prompt UPDATED FOR CHRISTMAS
             const systemContext = `
-                Eres el "Oráculo del Viajero", un experto guía medieval del parque Puy du Fou España en Toledo.
+                Eres el "Oráculo Navideño", un experto guía del parque Puy du Fou España en Toledo durante la temporada de Navidad.
                 Datos Actuales:
-                - Fecha: Sábado 6 de Diciembre de 2025.
-                - Clima: Máx 15°C, Mín 9°C. Lluvia ligera y viento moderado.
-                - Multitud: Día de máxima afluencia (Puente).
-                - Espectáculos Clave: El Último Cantar, A Pluma y Espada, Allende la Mar Océana, Cetrería de Reyes, Sorbaces.
-                - Horario de Operación: 9:00h a 19:00h según el plan táctico.
+                - Fecha: Sábado 6 de Diciembre de 2025 (Navidad).
+                - Horario: 11:30h a 22:00h (pero el usuario se va a las 19:00h).
+                - Clima: Frío y posible lluvia.
+                - Espectáculos ACTIVOS: El Último Cantar, A Pluma y Espada, Allende la Mar Océana, Sorbaces, Sueños de un Ángel Pícaro (Especial Navidad), El Gran Belén.
+                - Espectáculos CANCELADOS: Cetrería de Reyes, El Sueño de Toledo.
                 
                 Tu Misión:
-                - Responde a la pregunta del usuario de forma breve, útil y con un ligero toque épico/medieval.
-                - Usa emojis ✨.
-                - Si preguntan por ropa, insiste en capas y chubasquero.
-                - Si preguntan por comida, sugiere horarios fuera de hora punta (antes de 13:30).
+                - Responde con espíritu navideño y medieval.
+                - Usa emojis 🎄✨.
+                - Recuerda que Cetrería NO está disponible.
             `;
 
             try {
-                // Exponential backoff logic for retries
                 let response;
                 let data;
                 const maxRetries = 3;
-                let delay = 1000; // 1 second
+                let delay = 1000;
 
                 for (let i = 0; i < maxRetries; i++) {
                     response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`, {
@@ -450,25 +366,21 @@
                     data = await response.json();
 
                     if (!data.error) {
-                        break; // Success
+                        break;
                     }
-
                     if (i < maxRetries - 1) {
-                        // Wait before retrying
                         await new Promise(resolve => setTimeout(resolve, delay));
-                        delay *= 2; // Exponential backoff
+                        delay *= 2;
                     } else {
-                        throw new Error(data.error.message || 'Error desconocido al consultar el Oráculo.');
+                        throw new Error(data.error.message || 'Error desconocido.');
                     }
                 }
                 
                 if (data.error) {
-                    throw new Error(data.error.message || 'Error desconocido al consultar el Oráculo.');
+                    throw new Error(data.error.message || 'Error desconocido.');
                 }
 
                 const answer = data.candidates[0].content.parts[0].text;
-                
-                // Render Response with Markdown parsing
                 responseDiv.innerHTML = marked.parse(answer);
                 loadingDiv.classList.add('hidden');
                 responseDiv.classList.remove('hidden');
@@ -476,20 +388,18 @@
             } catch (error) {
                 console.error('Error:', error);
                 loadingDiv.classList.add('hidden');
-                responseDiv.innerHTML = `<p class="text-red-600 font-bold">☠️ El oráculo está nublado. Inténtalo de nuevo más tarde.</p>`;
+                responseDiv.innerHTML = `<p class="text-red-600 font-bold">☠️ El oráculo está congelado. Inténtalo luego.</p>`;
                 responseDiv.classList.remove('hidden');
             }
         }
 
 
-        // --- CHART DATA PROCESSING & CONFIGURATION (Existing Code) ---
+        // --- CHART DATA PROCESSING (Updated colors for Christmas) ---
 
-        // Label Wrapping Helper Function (Mandatory)
         function formatLabel(str, maxwidth) {
             var sections = [];
             var words = str.split(" ");
             var temp = "";
-
             words.forEach(function(item, index) {
                 if (temp.length > 0) {
                     var concat = temp + ' ' + item;
@@ -519,160 +429,42 @@
             return sections;
         }
 
-        // Common Chart Options
         const commonOptions = {
             responsive: true,
             maintainAspectRatio: false,
             plugins: {
-                legend: {
-                    position: 'bottom',
-                    labels: {
-                        font: { family: 'Roboto', size: 12 },
-                        color: '#2C3E50',
-                        usePointStyle: true,
-                        padding: 20
-                    }
-                },
+                legend: { display: false },
                 tooltip: {
-                    backgroundColor: 'rgba(44, 62, 80, 0.9)',
-                    titleFont: { family: 'Roboto', size: 14, weight: 'bold' },
-                    bodyFont: { family: 'Roboto', size: 13 },
-                    padding: 10,
-                    cornerRadius: 8,
+                    backgroundColor: '#165B33',
+                    titleFont: { family: 'Cinzel', size: 14 },
                     callbacks: {
-                        // MANDATORY TOOLTIP CONFIGURATION
-                        title: function(tooltipItems) {
+                         title: function(tooltipItems) {
                             const item = tooltipItems[0];
                             let label = item.chart.data.labels[item.dataIndex];
-                            if (Array.isArray(label)) {
-                                return label.join(' ');
-                            } else {
-                                return label;
-                            }
+                            if (Array.isArray(label)) return label.join(' ');
+                            return label;
                         }
                     }
                 }
             }
         };
 
-        // --- CHART 1: WEATHER (Bar Chart for Range) ---
         const ctxWeather = document.getElementById('weatherChart').getContext('2d');
         const weatherChart = new Chart(ctxWeather, {
             type: 'bar',
             data: {
-                labels: formatLabel('Temperatura Mínima, Temperatura Máxima', 15),
+                labels: formatLabel('Temp Mínima, Temp Máxima', 15),
                 datasets: [{
-                    label: 'Grados Celsius (°C)',
+                    label: '°C',
                     data: [9, 15],
-                    backgroundColor: [
-                        'rgba(41, 128, 185, 0.7)', // Blue for Cold
-                        'rgba(230, 126, 34, 0.7)'  // Orange for High
-                    ],
-                    borderColor: [
-                        '#2980B9',
-                        '#E67E22'
-                    ],
-                    borderWidth: 1,
-                    borderRadius: 8,
-                    barPercentage: 0.6
+                    backgroundColor: ['#1B4F72', '#BB2528'], // Blue and Red
+                    borderRadius: 8
                 }]
             },
             options: {
                 ...commonOptions,
-                plugins: {
-                    ...commonOptions.plugins,
-                    legend: { display: false }, // Hide legend for simple bar
-                    title: {
-                        display: true,
-                        text: 'Rango de Temperaturas (Sábado 6)',
-                        font: { family: 'Roboto', size: 16 }
-                    }
-                },
                 scales: {
-                    y: {
-                        beginAtZero: true,
-                        max: 20,
-                        title: { display: true, text: 'Temperatura (°C)' }
-                    }
-                }
-            }
-        });
-
-        // --- CHART 2: RAIN PROBABILITY (Doughnut) ---
-        const ctxRain = document.getElementById('rainChart').getContext('2d');
-        const rainChart = new Chart(ctxRain, {
-            type: 'doughnut',
-            data: {
-                labels: formatLabel('Probabilidad de Lluvia, Tiempo Seco', 15),
-                datasets: [{
-                    data: [30, 70],
-                    backgroundColor: [
-                        '#2980B9', // Rain Blue
-                        '#ECF0F1'  // Dry Gray
-                    ],
-                    borderColor: '#ffffff',
-                    borderWidth: 2,
-                    hoverOffset: 4
-                }]
-            },
-            options: {
-                ...commonOptions,
-                cutout: '70%',
-                plugins: {
-                    ...commonOptions.plugins,
-                    title: {
-                        display: true,
-                        text: 'Riesgo de Precipitación',
-                        font: { family: 'Roboto', size: 16 }
-                    }
-                }
-            },
-            plugins: [{
-                id: 'textCenter',
-                beforeDraw: function(chart) {
-                    var width = chart.width,
-                        height = chart.height,
-                        ctx = chart.ctx;
-                    ctx.restore();
-                    var fontSize = (height / 114).toFixed(2);
-                    ctx.font = "bold " + fontSize + "em Roboto";
-                    ctx.textBaseline = "middle";
-                    ctx.fillStyle = "#2980B9";
-                    var text = "30%",
-                        textX = Math.round((width - ctx.measureText(text).width) / 2),
-                        textY = height / 2;
-                    ctx.fillText(text, textX, textY);
-                    ctx.save();
-                }
-            }]
-        });
-
-        // --- CHART 3: SHOW DISTRIBUTION (Pie Chart) ---
-        // Data: 4 Indoor Shows vs 1 Outdoor Show
-        const ctxShows = document.getElementById('showsChart').getContext('2d');
-        const showsChart = new Chart(ctxShows, {
-            type: 'pie',
-            data: {
-                labels: formatLabel('Espectáculos a Cubierto (Indoor), Espectáculos al Aire Libre (Outdoor)', 15),
-                datasets: [{
-                    data: [4, 1], // 4 Indoor, 1 Outdoor
-                    backgroundColor: [
-                        '#27AE60', // Green for Safe/Indoor
-                        '#E67E22'  // Orange for Caution/Outdoor
-                    ],
-                    borderColor: '#ffffff',
-                    borderWidth: 2
-                }]
-            },
-            options: {
-                ...commonOptions,
-                plugins: {
-                    ...commonOptions.plugins,
-                    title: {
-                        display: true,
-                        text: 'Distribución de Espectáculos',
-                        font: { family: 'Roboto', size: 16 }
-                    }
+                    y: { beginAtZero: true, max: 20 }
                 }
             }
         });
